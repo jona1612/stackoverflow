@@ -4,12 +4,15 @@ import axios from "axios";
 import google from "../../src/assets/google1.svg";
 import fb from "../../src/assets/facebook.svg";
 import github from "../../src/assets/github.svg";
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
     const [displayName, setDisplayName] = useState("")
     const [emailId, setEmailId] = useState("")
     const [password, setPassword] = useState("")
     const [buttonDisabled, setButtonDisabled] = useState(false)
+
+    const navigate = useNavigate()
 
     let handleSubmit = async (e) => {
         e.preventDefault()
@@ -21,8 +24,10 @@ function Register() {
             }
             setButtonDisabled(e.target.value === "")
             try {
-                await axios.post("http://localhost:5000/api/users/signup", signUpInfo).then((res) => {
-                    alert("question added")
+                await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/signup", signUpInfo).then((res) => {
+                    alert("Successfully sign up")
+                    navigate("/login")
+
                 }).catch((error) => {
                     console.log(error)
                 })
@@ -88,7 +93,7 @@ function Register() {
                             <p className='small'> Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
                         </div>
                         <div className='text-center'>
-                            <input disabled={buttonDisabled} class="btn mt-3 mb-5" style={{ width: "260px", backgroundColor: "rgb(10,149,255)", color: "white" }} type="submit" value="Log in" />
+                            <input disabled={buttonDisabled} class="btn mt-3 mb-5" style={{ width: "260px", backgroundColor: "rgb(10,149,255)", color: "white" }} type="submit" value="Sign up" />
                         </div>
                         <p className='text-center small'>By clicking “Sign up”, you agree to our <a href='#!'>terms of service, privacy policy</a> and <a href='#!'>cookie policy</a></p>
                     </div>
@@ -96,9 +101,9 @@ function Register() {
                 </div >
             </form >
             <div className='text-center mt-5'>
-                <p> Don’t have an account? <a href='#!' className='fs-6'>Sign up</a></p>
+                <p> Already have an account? <Link to={"/login"} className='fs-6'>Log in</Link></p>
 
-                <p> Are you an employer? <a href="#!" className='fs-6'>Sing up on Talent</a></p>
+                <p> Are you an employer? <a href="#!" className='fs-6'>Sign up on Talent</a></p>
             </div>
         </div >
     )

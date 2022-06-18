@@ -1,17 +1,18 @@
 import { useFormik } from 'formik';
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import logo from "../../src/assets/logo 1.svg";
 import google from "../../src/assets/google1.svg";
 import fb from "../../src/assets/facebook.svg";
 import github from "../../src/assets/github.svg";
 import axios from 'axios';
 import userContext from './user_context';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Login() {
     const context = useContext(userContext)
     const navigate = useNavigate()
+    console.log(context.user);
 
     let formik = useFormik({
         initialValues: {
@@ -20,9 +21,10 @@ function Login() {
         },
         onSubmit: async (values) => {
             try {
-                await axios.post("http://localhost:5000/api/users/login", values).then((res) => {
+                await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/login", values).then((res) => {
                     alert("successfully loged")
                     context.setUser(res.data)
+                    console.log(context.user);
                     navigate("/main")
 
                 }).catch((error) => {
@@ -34,6 +36,8 @@ function Login() {
             }
         },
     });
+
+
 
     return (
 
@@ -95,7 +99,7 @@ function Login() {
             </form>
 
             <div className='text-center mt-5'>
-                <p> Don’t have an account? <a href='#!' className='small'>Sign up</a></p>
+                <p> Don’t have an account? <Link to={"/signup"} className='small'>Sign up</Link></p>
                 <p> Are you an employer? <a href="#!" className='small'>Sing up on Talent</a></p>
             </div>
         </div>

@@ -3,7 +3,8 @@ import Public from "@mui/icons-material/Public";
 import Stars from "@mui/icons-material/Stars";
 import Work from "@mui/icons-material/Work";
 import "./css/Sidebar.css";
-// import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 function Side() {
 
@@ -12,7 +13,7 @@ function Side() {
             <div className='sidebar-container'>
                 <div className='sidebar-options'>
                     <div className='sidebar-option'>
-                        <a>Home</a>
+                        <Link to={"/main"}>Home</Link>
                     </div>
                     <div className='sidebar-option'>
                         <a>PUBLIC</a>

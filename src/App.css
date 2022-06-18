@@ -1,3 +1,14 @@
 .body {
   background-color: #dbdb11;
 }
+
+.avatar {
+  border-radius: 100%;
+  background-color: blueviolet;
+  color: white;
+  width: 35px;
+  height: 35px;
+  /* padding-left: 12px;
+  padding-top: 5px; */
+  margin: 10px;
+}

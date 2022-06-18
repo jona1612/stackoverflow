@@ -29,7 +29,7 @@ function MainQuestion() {
 
     useEffect(() => {
         async function getQuestionDetails() {
-            await axios.get(`http://localhost:5000/api/question/${id}`).then((res) => {
+            await axios.get(`https://jonathan-stackoverflow.herokuapp.com/api/question/${id}`).then((res) => {
                 console.log(res.data[0])
                 setQuestionData(res.data[0])
             }).catch((err) => {
@@ -40,7 +40,7 @@ function MainQuestion() {
     }, [id])
 
     async function getUpdatedAnswer() {
-        await axios.get(`http://localhost:5000/api/question/${id}`).then((res) => {
+        await axios.get(`https://jonathan-stackoverflow.herokuapp.com/api/question/${id}`).then((res) => {
             console.log(res.data[0])
             setQuestionData(res.data[0])
         }).catch((err) => {
@@ -60,7 +60,7 @@ function MainQuestion() {
                     "Content-Type": "application/json"
                 }
             }
-            await axios.post("http://localhost:5000/api/answer", body, config).then((res) => {
+            await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/answer", body, config).then((res) => {
                 console.log(res.data);
                 alert("Answer added")
                 setAnswer("")
@@ -79,7 +79,7 @@ function MainQuestion() {
                 user: user
             }
 
-            await axios.post(`http://localhost:5000/api/comment/${id}`, body).then((res) => {
+            await axios.post(`https://jonathan-stackoverflow.herokuapp.com/api/comment/${id}`, body).then((res) => {
                 console.log(res.data)
                 setComment("")
                 setShow(false)
