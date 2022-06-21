@@ -1,4 +1,3 @@
-// import { Button } from 'bootstrap'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../../src/assets/logo 1.svg"
@@ -7,8 +6,7 @@ import userContext from './user_context'
 
 function Navbar() {
     const context = useContext(userContext)
-    // let user = context.user
-    console.log(context.user)
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-top border-warning border-3" aria-label="Eleventh navbar example" style={{ width: "100%", height: "3.5rem", boxShadow: "2px 2px 2px -2px grey" }}>
 

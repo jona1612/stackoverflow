@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import logo from "../../src/assets/logo 1.svg";
 import google from "../../src/assets/google1.svg";
 import fb from "../../src/assets/facebook.svg";
@@ -12,7 +12,6 @@ import { Link, useNavigate } from 'react-router-dom';
 function Login() {
     const context = useContext(userContext)
     const navigate = useNavigate()
-    console.log(context.user);
 
     let formik = useFormik({
         initialValues: {
@@ -24,18 +23,16 @@ function Login() {
                 await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/login", values).then((res) => {
                     alert("successfully loged")
                     context.setUser(res.data)
-                    console.log(context.user);
                     navigate("/main")
 
                 }).catch((error) => {
-                    alert("login with registered email and correct password")
+                    alert("login with registered email or correct password")
                 })
             } catch (error) {
                 console.log(error);
             }
         },
     });
-
 
 
     return (
@@ -64,7 +61,6 @@ function Login() {
                             <i className='me-1'> <img src={fb}></img></i>Log in with Facebook
                         </button>
                     </div>
-
 
                     <div className='mt-1 bg-white border border-2 mx-auto' style={{ width: "290px", boxShadow: "2px 2px 10px -2px grey" }}>
                         <div className="mt-4 mx-auto" style={{ width: "260px" }}>
