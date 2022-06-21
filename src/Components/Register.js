@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import axios from "axios";
-// import logo from "../../src/assets/logo 1.svg"
 import google from "../../src/assets/google1.svg";
 import fb from "../../src/assets/facebook.svg";
 import github from "../../src/assets/github.svg";
 import { Link, useNavigate } from 'react-router-dom';
+
 
 function Register() {
     const [displayName, setDisplayName] = useState("")
@@ -25,11 +25,13 @@ function Register() {
             setButtonDisabled(e.target.value === "")
             try {
                 await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/signup", signUpInfo).then((res) => {
-                    alert("Successfully sign up")
+                    alert("Successfully Registered")
                     navigate("/login")
 
                 }).catch((error) => {
                     console.log(error)
+                    alert("Something went wrong")
+
                 })
             } catch (error) {
                 console.log(error);
@@ -40,7 +42,7 @@ function Register() {
 
     return (
 
-        <div className="">
+        <div className="signup">
             <form onSubmit={handleSubmit}>
                 <div>
                     <div className='d-flex flex-column mt-4 mx-auto' style={{ width: "290px", }}>
@@ -90,20 +92,20 @@ function Register() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
 
-                            <p className='small'> Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
+                            <p className='signup-content text-muted'> Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
                         </div>
                         <div className='text-center'>
                             <input disabled={buttonDisabled} class="btn mt-3 mb-5" style={{ width: "260px", backgroundColor: "rgb(10,149,255)", color: "white" }} type="submit" value="Sign up" />
                         </div>
-                        <p className='text-center small'>By clicking “Sign up”, you agree to our <a href='#!'>terms of service, privacy policy</a> and <a href='#!'>cookie policy</a></p>
+                        <p className='text-center small'>By clicking “Sign up”, you agree to our <a href='#!' className='text-primary'>terms of service, privacy policy</a> and <a href='#!' className="text-primary">cookie policy</a></p>
                     </div>
 
                 </div >
             </form >
             <div className='text-center mt-5'>
-                <p> Already have an account? <Link to={"/login"} className='fs-6'>Log in</Link></p>
+                <p> Already have an account? <Link to={"/login"} className='fs-6 text-primary'>Log in</Link></p>
 
-                <p> Are you an employer? <a href="#!" className='fs-6'>Sign up on Talent</a></p>
+                <p> Are you an employer? <a href="#!" className='fs-6 text-primary'>Sign up on Talent</a></p>
             </div>
         </div >
     )

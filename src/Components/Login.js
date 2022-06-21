@@ -28,8 +28,7 @@ function Login() {
                     navigate("/main")
 
                 }).catch((error) => {
-                    alert("Incorrect Password")
-                    console.log(error)
+                    alert("login with registered email and correct password")
                 })
             } catch (error) {
                 console.log(error);
@@ -41,7 +40,7 @@ function Login() {
 
     return (
 
-        <div>
+        <div className='login-content'>
             <form onSubmit={formik.handleSubmit}>
                 <div>
                     <div className='text-center mb-2 mt-4'>
@@ -81,7 +80,7 @@ function Login() {
                         </div>
                         <div className="mt-3 mx-auto" style={{ width: "260px" }}>
                             <label className='fw-bold'>Password</label>
-                            <span className='ms-5'><a href='#!' className='ms-4 small'>Forgot password?</a></span>
+                            <span className='ms-5'><a href='#!' className='ms-4 small text-primary'>Forgot password?</a></span>
                             <input
                                 type={'password'}
                                 className="form-control"
@@ -99,8 +98,8 @@ function Login() {
             </form>
 
             <div className='text-center mt-5'>
-                <p> Don’t have an account? <Link to={"/signup"} className='small'>Sign up</Link></p>
-                <p> Are you an employer? <a href="#!" className='small'>Sing up on Talent</a></p>
+                <p> Don’t have an account? <Link to={"/signup"} className='text-primary'>Sign up</Link></p>
+                <p> Are you an employer? <a href="#!" className='text-primary'>Sign up on Talent</a></p>
             </div>
         </div>
 

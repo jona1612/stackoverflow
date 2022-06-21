@@ -1,13 +1,15 @@
 .stack-index {
     min-width: fit-content;
     display: flex;
-
+    margin-top: 50px;
     min-height: 85vh;
+    margin-left: 1rem;
 }
 
 .stack-index-content {
-    display: flex;
+    /* display: flex; */
     width: 100%;
-    /* align-items: center; */
-    justify-content: center;
+    justify-content: left;
+        margin-right: 15rem;
+        flex: auto;
 }

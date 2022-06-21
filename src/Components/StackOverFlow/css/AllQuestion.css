@@ -1,6 +1,5 @@
 .all-questions {
     display: flex;
-    /* flex-direction: column; */
     width: 100%;
     padding: 20px 0px;
     border-bottom: 1px solid #eee;
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: column;
     flex-direction: row;
-    /* align-items: center; */
     justify-content: space-between;
     width: 100%;
 }

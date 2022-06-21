@@ -4,6 +4,8 @@
     padding: 30px 10px;
     flex: 0.75;
     flex-direction: column;
+    width: 100%;
+        margin-left: 200px;
 }
 
 .main-container {

@@ -1,5 +1,7 @@
 .sidebar {
   display: flex;
+  position: fixed;
+    justify-content: left;
   padding: 20px 0px 10px 10px;
   height: 100%;
   border-right: 1px solid #ddd;

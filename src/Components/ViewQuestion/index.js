@@ -5,7 +5,7 @@ import "../StackOverFlow/css/index.css"
 
 function index() {
     return (
-        <div className="stack-index">
+        <div className="stack-index mt-5">
             <div className="stack-index-content">
                 <Side />
                 <MainQuestion />

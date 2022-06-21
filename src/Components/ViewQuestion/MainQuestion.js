@@ -9,6 +9,7 @@ import axios from 'axios';
 import ReactHtmlParser from "react-html-parser";
 import userContext from '../user_context';
 
+
 function MainQuestion() {
     const [show, setShow] = useState(false)
     const [answer, setAnswer] = useState("")
@@ -30,7 +31,6 @@ function MainQuestion() {
     useEffect(() => {
         async function getQuestionDetails() {
             await axios.get(`https://jonathan-stackoverflow.herokuapp.com/api/question/${id}`).then((res) => {
-                console.log(res.data[0])
                 setQuestionData(res.data[0])
             }).catch((err) => {
                 console.log(err);
@@ -41,7 +41,6 @@ function MainQuestion() {
 
     async function getUpdatedAnswer() {
         await axios.get(`https://jonathan-stackoverflow.herokuapp.com/api/question/${id}`).then((res) => {
-            console.log(res.data[0])
             setQuestionData(res.data[0])
         }).catch((err) => {
             console.log(err);

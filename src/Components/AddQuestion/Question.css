@@ -2,7 +2,8 @@
   display: flex;
   width: 100%;
   background-color: rgba(238, 238, 238, 0.568);
-
+  margin-top: 50px;
+    margin-bottom: 10rem;
   height: 100vh;
   justify-content: center;
 }
@@ -20,7 +21,7 @@
   width: 100%;
 }
 
-.head-title > h1 {
+.head-title>h1 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 26px;
@@ -54,16 +55,16 @@
   font-size: 0.9rem;
 }
 
-.title > h3 {
+.title>h3 {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
 }
 
-.title > small {
+.title>small {
   color: rgba(0, 0, 0, 0.8);
 }
 
-.title > input {
+.title>input {
   margin: 5px 0px;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -71,10 +72,10 @@
   outline: none;
 }
 
-.title > input::placeholder {
+.title>input::placeholder {
   color: #ddd;
 }
-.title > input:focus {
+.title>input:focus {
   border: 1px solid #0054ff;
   box-shadow: 0 4px 8px 0 #0055ff23, 0 6px 20px 0 #0055ff11;
 }
