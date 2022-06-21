@@ -9,7 +9,6 @@ import StackOverFlow from "./Components/StackOverFlow/index";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UserProvider } from './Components/user_context';
 import { useState } from 'react';
-import Nav from './Components/Nav';
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
     <BrowserRouter>
       <UserProvider value={{ user, setUser }}>
         <Navbar />
-        {/* <Nav /> */}
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
