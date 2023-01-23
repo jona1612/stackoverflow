@@ -84,7 +84,7 @@ function Question() {
                 user: user
             }
 
-            await axios.post('https://jonathan-stackoverflow.herokuapp.com/api/question', bodyJSON).then((res) => {
+            await axios.post('https://stackoverflow-backend-jonathan.vercel.app/api/question', bodyJSON).then((res) => {
                 alert('Question added succesfully')
                 setLoading(false)
                 navigate('/main')

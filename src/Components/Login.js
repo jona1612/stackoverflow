@@ -20,7 +20,7 @@ function Login() {
         },
         onSubmit: async (values) => {
             try {
-                await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/login", values).then((res) => {
+                await axios.post("https://stackoverflow-backend-jonathan.vercel.app/api/users/login", values).then((res) => {
                     alert("successfully loged")
                     context.setUser(res.data)
                     navigate("/main")

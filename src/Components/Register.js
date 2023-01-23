@@ -24,7 +24,7 @@ function Register() {
             }
             setButtonDisabled(e.target.value === "")
             try {
-                await axios.post("https://jonathan-stackoverflow.herokuapp.com/api/users/signup", signUpInfo).then((res) => {
+                await axios.post("https://stackoverflow-backend-jonathan.vercel.app/api/users/signup", signUpInfo).then((res) => {
                     alert("Successfully Registered")
                     navigate("/login")
 

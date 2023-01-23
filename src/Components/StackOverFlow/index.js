@@ -9,7 +9,7 @@ function Index() {
 
     useEffect(() => {
         async function getQuestion() {
-            await axios.get("https://jonathan-stackoverflow.herokuapp.com/api/question").then((res) => {
+            await axios.get("https://stackoverflow-backend-jonathan.vercel.app/api/question").then((res) => {
                 setQuestions(res.data.reverse());
                 // console.log(res.data)
             })
